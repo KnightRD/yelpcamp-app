@@ -1,0 +1,38 @@
+<!-- EDIT CAMPGROUND VIEW -->
+
+<% include ../partials/header %>
+
+<div class="container">
+	<div class="row">
+
+
+		<h1 style="text-align: center;">Edit <%= campground.name %></h1>
+		<div style="width: 30%; margin: 20px auto;">
+			<form action="/campgrounds/<%= campground._id %>?_method=PUT" method="POST">
+				<div class="form-group">
+					<label id="name">Name</label>
+					<input class="form-control" id="name" type="text" value="<%= campground.name %>" placeholder="name" name="campground[name]">
+				</div>
+				<div class="form-group">
+					<label id="price">Price</label>
+					<input class="form-control" id="price" type="number" placeholder="price" min="0.01" step="0.01" value="<%= campground.price %>" name="campground[price]">
+				</div>
+				<div class="form-group">
+					<label id="image">Image</label>
+					<input class="form-control" id="image" type="text" value="<%= campground.image %>" placeholder="image" name="campground[image]">
+				</div>
+				<div class="form-group">
+					<label id="description">Description</label>
+					<input class="form-control" id="description" type="text" placeholder="description" value="<%= campground.description %>" name="campground[description]">
+				</div>
+				<div class="form-group">
+					<button class="btn btn-primary btn-lg btn-block">Update</button>
+				</div>		
+			</form>
+			<a href="/campgrounds">Back to all campgrounds</a>
+		</div>
+	</div>
+</div>
+
+
+<% include ../partials/footer %>
