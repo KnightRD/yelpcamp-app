@@ -22,13 +22,13 @@ var commentRoutes = require("./routes/comments"),
 	indexRoutes = require("./routes/index");
 
 // DOTENV CONFIG
-// var dotenv = require("dotenv");
-// dotenv.config();
+var dotenv = require("dotenv");
+dotenv.config();
 
 // MONGOOSE CONFIG
 // This now takes the URI from .env for local env (uses local database) and the URI from heroku defined (production database) 
 var URI = process.env.URI;
-mongoose.connect("mongodb+srv://KnightRD:11Thomas00.@cluster0-9en7m.mongodb.net/yelp_camp?retryWrites=true&w=majority", {
+mongoose.connect(URI, {
 	useNewUrlParser: true,
 	useCreateIndex: true
 });
